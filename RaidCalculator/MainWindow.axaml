@@ -1,0 +1,186 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="550" d:DesignHeight="400"
+		MinWidth="550" MinHeight="400"
+		MaxWidth="550" MaxHeight="400"
+        x:Class="RaidCalculator.MainWindow"
+        Title="Калькулятор RAID">
+	<WrapPanel
+		Orientation="Vertical">
+		<Line
+			StartPoint="0 0"
+			EndPoint="650 0"
+			Stroke="Black"
+			StrokeThickness="1">
+		</Line>
+		<WrapPanel
+			Margin="20"
+			Orientation="Vertical">
+			<TextBlock
+				FontWeight="Bold"
+				Text="Тип RAID:">
+			</TextBlock>
+			<WrapPanel
+				Margin="0 0 0 20">
+				<RadioButton
+					Name="genericButton"
+					GroupName="type"
+					Click="Check"
+					Margin="0 5 15 5"
+					Content="Generic">
+				</RadioButton>
+				<RadioButton
+					Name="eraButton"
+					GroupName="type"
+					Click="Check"
+					Margin="0 5"
+					Content="ERA">
+				</RadioButton>
+			</WrapPanel>
+			<TextBlock
+				FontWeight="Bold"
+				Text="Уровень RAID:">
+			</TextBlock>
+			<WrapPanel
+				Orientation="Vertical">
+				<WrapPanel>
+					<RadioButton
+						Name="zeroButton"
+						Click="Check"
+						GroupName="level"
+						Margin="0 5 15 5"
+						Content="0">
+					</RadioButton>
+					<RadioButton
+						Name="fiveButton"
+						Click="Check"
+						GroupName="level"
+						Margin="0 5"
+						Content="5">
+					</RadioButton>
+					<RadioButton
+						Name="sixButton"
+						Click="Check"
+						GroupName="level"
+						Margin="15 5"
+						Content="6">
+					</RadioButton>
+					<RadioButton
+						Name="sevenThreeButton"
+						Click="Check"
+						GroupName="level"
+						Margin="0 5"
+						Content="7.3">
+					</RadioButton>
+					<RadioButton
+						Name="oneZeroButton"
+						Click="Check"
+						GroupName="level"
+						Margin="15 5"
+						Content="10">
+					</RadioButton>
+					<RadioButton
+						Name="nPlusMButton"
+						Click="Check"
+						GroupName="level"
+						Margin="0 5"
+						Content="N+M">
+					</RadioButton>
+				</WrapPanel>
+				<WrapPanel
+					Name="eraPanel">
+					<RadioButton
+						Name="oneButton"
+						Click="Check"
+						GroupName="level"
+						Margin="0 5 15 5"
+						Content="1">
+					</RadioButton>
+					<RadioButton
+						Name="fiveZeroButton"
+						Click="Check"
+						GroupName="level"
+						Margin="0 5"
+						Content="50">
+					</RadioButton>
+					<RadioButton
+						Name="sixZeroButton"
+						Click="Check"
+						GroupName="level"
+						Margin="15 5"
+						Content="60">
+					</RadioButton>
+					<RadioButton
+						Name="sevenZeroButton"
+						Click="Check"
+						GroupName="level"
+						Margin="0 5"
+						Content="70">
+					</RadioButton>
+				</WrapPanel>
+			</WrapPanel>
+			<WrapPanel
+				Margin="0 20 0 0">
+				<WrapPanel
+					Margin="0 0 20 20"
+					Orientation="Vertical">
+					<TextBlock
+						Margin="0 0 0 10"
+						Text="Объём диска:">
+					</TextBlock>
+					<WrapPanel>
+						<TextBox
+							Name="sizeBox"
+							KeyUp="SizeEnterCheck"
+							HorizontalAlignment="Center"
+							Width="70"
+							CornerRadius="0">
+						</TextBox>
+						<TextBlock
+							Margin="7"
+							Text="ТБ">
+						</TextBlock>
+					</WrapPanel>
+				</WrapPanel>
+				<WrapPanel
+					Margin="0 0 20 20"
+					Orientation="Vertical">
+					<TextBlock
+						Margin="0 0 0 10"
+						Text="Кол-во дисков:">
+					</TextBlock>
+					<ComboBox
+						Name="countBox"
+						SelectionChanged="SelectCheck"
+						HorizontalAlignment="Center"
+						Width="70"
+						CornerRadius="0">
+					</ComboBox>
+				</WrapPanel>
+				<WrapPanel
+					Margin="0 0 0 20"
+					Orientation="Vertical">
+					<TextBlock
+						Name="varText"
+						Margin="0 0 0 10">
+					</TextBlock>
+					<TextBox
+						Name="varBox"
+						KeyUp="VarEnterCheck"
+						HorizontalAlignment="Center"
+						Width="70"
+						CornerRadius="0">
+					</TextBox>
+				</WrapPanel>
+			</WrapPanel>
+			<TextBlock
+				Name="answerBox"
+				Margin="0 10 0 0"
+				FontWeight="Bold"
+				Foreground="DarkBlue">
+			</TextBlock>
+		</WrapPanel>
+	</WrapPanel>
+</Window>
